@@ -6,7 +6,12 @@ const butterflyImages = [
     "img/butterfly2.webp",
     "img/butterfly3.webp",
     "img/butterfly4.webp",
-    "img/butterfly5.webp"
+    "img/butterfly5.webp",
+    "img/butterfly6.webp",
+    "img/butterfly7.webp",
+    "img/butterfly8.webp",
+    "img/butterfly9.webp",
+    "img/butterfly10.webp"
 ];
 
 function startGame() {
