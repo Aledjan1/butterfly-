@@ -1,16 +1,33 @@
 let score = 0;
+let timer;
+let timeLeft = 60;  // Таймер на 60 секунд
 const butterflyImages = [
-    "img/butterfly1.png",  
+    "img/butterfly1.png",  // Замініть на свої зображення
     "img/butterfly2.png",
     "img/butterfly3.png",
     "img/butterfly4.png"
 ];
 
 function startGame() {
-    document.getElementById("score").textContent = 0;
     score = 0;
+    document.getElementById("score").textContent = score;
     document.getElementById("gameArea").innerHTML = "";
+    document.getElementById("timer").textContent = timeLeft;  // Встановлюємо таймер на початок
+    startTimer();  // Запускаємо таймер
     spawnButterflies(5);
+}
+
+function startTimer() {
+    timer = setInterval(() => {
+        timeLeft--;  // Зменшуємо час на 1 секунду
+        document.getElementById("timer").textContent = timeLeft;
+        
+        if (timeLeft <= 0) {
+            clearInterval(timer);  // Зупиняємо таймер
+            alert("Time's up! Your score: " + score);  // Сповіщення після закінчення часу
+            resetGame();
+        }
+    }, 1000);  // Таймер оновлюється кожну секунду
 }
 
 function spawnButterflies(count) {
@@ -44,4 +61,13 @@ function animateButterfly(butterfly) {
         butterfly.style.left = newX + "px";
         butterfly.style.top = newY + "px";
     }, 1000);
+}
+
+function resetGame() {
+    // Очищаємо гру і скидаємо всі значення
+    score = 0;
+    timeLeft = 60;
+    document.getElementById("score").textContent = score;
+    document.getElementById("timer").textContent = timeLeft;
+    document.getElementById("gameArea").innerHTML = "";
 }
