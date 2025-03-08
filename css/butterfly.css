@@ -29,17 +29,29 @@ body {
     transform: scale(1.2);
 }
 
-/* Анімація руху метелика (підлітання) */
 @keyframes flutter {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-10px) rotate(5deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
 }
 
-/* Анімація махання крилами */
+
 @keyframes wingFlap {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(15deg); }  /* Крила метелика піднімаються */
-    100% { transform: rotate(0deg); }  /* Крила повертаються в початкове положення */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(15deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 #timer {
