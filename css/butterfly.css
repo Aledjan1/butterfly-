@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    background: url('../img/field.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+#gameArea {
+    width: 600px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+    margin: auto;
+    border: 2px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.butterfly {
+    width: 50px;
+    height: auto;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    animation: flutter 1s infinite alternate ease-in-out;
+}
+
+.butterfly:hover {
+    transform: scale(1.2);
+}
+
+@keyframes flutter {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
